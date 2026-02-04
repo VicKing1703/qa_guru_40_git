@@ -1,0 +1,28 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'ru.v1ck1ng'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation (
+            "com.codeborne:selenide:7.14.0",
+            "org.junit.jupiter:junit-jupiter-api:5.14.2"
+    )
+    testRuntimeOnly (
+            "org.slf4j:slf4j-simple:1.7.36"
+    )
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
